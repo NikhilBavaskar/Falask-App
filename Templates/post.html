@@ -1,0 +1,106 @@
+{% extends 'layout.html' %}
+   {% block body %}
+
+<link href="{{ url_for('static', filename='assets/css/blog.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='assets/css/pricing.css') }}" rel="stylesheet">
+<br>
+<br>
+<br>
+
+<div class="container pb50">
+    <div class="row">
+        <div class="col-md-9 mb40">
+            <article>
+                <img src="{{ url_for('static', filename='assets/img/Uplode/' + cont.image_filename ) }}" alt="" class="img-fluid mb30">
+                <div class="post-content">
+                    <h3>{{cont.title}}</h3>
+                    <ul class="post-meta list-inline">
+                        <li class="list-inline-item">
+                            <i class="fa fa-user-circle-o"></i> <a href="#">{{cont.user}}</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <i class="fa fa-calendar-o"></i> <a href="#">{{cont.date}}</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <i class="fa fa-tags"></i> <a href="#">{{cont.title}}</a>
+                        </li>
+                    </ul>
+                    <p class="lead">{{cont.cont}}</p>
+                    <ul class="list-inline share-buttons">
+                        <li class="list-inline-item">Share Post:</li>
+                        <li class="list-inline-item">
+                            <a href="#" class="social-icon-sm si-dark si-colored-facebook si-gray-round">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="social-icon-sm si-dark si-colored-twitter si-gray-round">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="social-icon-sm si-dark si-colored-linkedin si-gray-round">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr class="mb40">
+                    <h4 class="mb40 text-uppercase font500">Comments</h4>
+                    {% for data in Comment %}
+                    <div class="media mb40">
+                        <i class="d-flex mr-3 fa fa-user-circle-o fa-3x"></i>
+                        <div class="media-body">
+                            <h5 class="mt-0 font400 clearfix">{{data.name}}</h5>{{data.comment}}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <hr class="mb40">
+                    <h4 class="mb40 text-uppercase font500">Post a comment</h4>
+                    <form role="form" method="post" >
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" name="name" class="form-control" placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" class="form-control" placeholder="Email ID">
+                        </div>
+                        <div class="form-group">
+                            <label>Comment</label>
+                            <textarea class="form-control" rows="5" name="comment" placeholder="Comment"></textarea>
+                        </div>
+                        <div class="my-3">
+                            <div class="clearfix pricingTable-signup float-right">
+
+                                <div class="text-center "><button  class="btn btn-primary btn-lg" type="submit">Send Message</button></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </article>
+            <!-- post article-->
+
+        </div>
+        <div class="col-md-3 mb40">
+            <div class="mb40">
+                <form>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search..." aria-describedby="basic-addon2">
+                        <button class="input-group-addon" id="basic-addon2"><i class="fa fa-search"></i></button>
+                    </div>
+                </form>
+            </div>
+            <!--/col-->
+            <div class="mb40">
+                <h4 class="sidebar-title">More Knowledge</h4>
+                <ul class="list-unstyled categories">
+                    {% for category in blog %}
+                    <li><a href="/blogs/{{category.slug}}">{{category.title}}</a></li>
+                    {% endfor %}
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+   {%  endblock %}

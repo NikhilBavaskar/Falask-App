@@ -1,0 +1,85 @@
+{% extends 'layout.html' %}
+   {% block body %}
+
+<link href="{{ url_for('static', filename='assets/css/pricing.css') }}" rel="stylesheet">
+<hr>
+
+<div class="demo">
+    <div class="container">
+        <br>
+        <br>
+
+        <br>
+        <br>
+
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+                <div class="pricingTable">
+                    <div class="pricingTable-header">
+                        <div class="price-value">
+                            <span class="amount">₹20K</span>
+                            <span class="duration"></span>
+                        </div>
+                        <h3 class="title">WordPress</h3>
+                    </div>
+                    <div class="pricingTable-signup">
+                        <a href="/buy">Buy Now</a>
+                    </div>
+                    <ul class="pricing-content">
+                        <li>Website Development</li>
+                        <li>Domain Registration and Setup</li>
+                        <li>SEO Optimization</li>
+                        <li class="disable">Content Integration</li>
+                        <li class="disable">Training and Support</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="pricingTable magenta">
+                    <div class="pricingTable-header">
+                        <div class="price-value">
+                            <span class="amount">₹35K</span>
+                            <span class="duration"></span>
+                        </div>
+                        <h3 class="title">Custom Web Application Development</h3>
+                    </div>
+                    <div class="pricingTable-signup">
+                        <a href="/buy">Buy Now</a>
+                    </div>
+                    <ul class="pricing-content">
+                        <li>Detailed analysis and consultation to define project requirements</li>
+                        <li>Custom web application design and development</li>
+                        <li>Data security and privacy measures implementation</li>
+                        <br>
+                    </ul>
+                </div>
+            </div>
+             <div class="col-md-4 col-sm-6">
+                <div class="pricingTable magenta">
+                    <div class="pricingTable-header">
+                        <div class="price-value">
+                            <span class="amount">₹45K</span>
+                            <span class="duration"></span>
+                        </div>
+                        <h3 class="title">E-commerce Web Development </h3>
+                    </div>
+                    <div class="pricingTable-signup">
+                        <a href="/buy">Buy Now</a>
+                    </div>
+                    <ul class="pricing-content">
+                        <li>Custom e-commerce website design and development</li>
+                        <li>User-friendly navigation and intuitive user interface</li>
+                        <li>Mobile-responsive design for seamless shopping experiences on all devices</li>
+                        <li>Integration payment gateways for secure online transactions</li>
+                        <li class="disable">Secure customer accounts and order tracking functionalities</li>
+                        <br>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+
+   {%  endblock %}

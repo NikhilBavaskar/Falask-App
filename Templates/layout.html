@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{{ param['web-name'] }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/fonts/font-awesome.min.css') }}">
+    <link href="{{ url_for('static', filename='assets/vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet">
+     <link href="{{ url_for('static', filename='assets/img/Black White Modern Professional Company Business Logo.png') }}" rel="icon">
+  <link href="{{ url_for('static', filename='assets/img/assets/img/Black White Modern Professional Company Business Logo.png.png') }}" rel="apple-touch-icon">
+</head>
+
+<body>
+ <header id="header" class="fixed-top header-inner-pages">
+    <div class="container d-flex align-items-center justify-content-lg-between">
+
+      <h1 class="logo me-auto me-lg-0"><a href="/">{{ param['web-name'] }}<span>.</span></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto " href="/#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="/#about">About</a></li>
+          <li><a class="nav-link scrollto" href="/#services">Services</a></li>
+          <li><a class="nav-link scrollto " href="/pricing">Pricing</a></li>
+          <li class="dropdown"><a href="#"><span>Our Blogs</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+                {% for data in blog %}
+              <li><a href="/blogs/{{data.slug}}">{{data.title}}</a></li>
+                {% endfor %}
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="/#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <a href="/#contact" class="get-started-btn scrollto">Get Started</a>
+
+    </div>
+  </header><!-- End Header -->
+   {% block body %}
+  {%  endblock %}
+<!-- ======= Footer ======= -->
+      <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>{{param['web-name']}}<span>.</span></h3>
+              <p>
+                Mothi Umari <br>
+                Akola Maharastra, India<br><br>
+                <strong>Phone:</strong> +91 7972104370 <br>
+                <strong>Email:</strong> bavaskarnikhil@outlook.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/logIN">Log In</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="/{{tag1.slug}}">{{tag1.headline}}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/{{tag2.slug}}">{{tag2.headline}}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/{{tag3.slug}}">{{tag3.headline}}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/{{tag4.slug}}">{{tag4.headline}}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/{{tag5.slug}}">{{tag5.headline}}</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/{{tag6.slug}}">{{tag6.headline}}</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>{{param['web-name']}}</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="/">{{param['web-name']}}</a>
+      </div>
+    </div>
+  </footer>
+    <script src="{{ url_for('static', filename='assets/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/clean-blog.js') }}"></script>
+</body>
+
+</html>

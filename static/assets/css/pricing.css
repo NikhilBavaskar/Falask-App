@@ -1,0 +1,110 @@
+:root{ --main-color: #333333; }
+.pricingTable{
+    color: var(--main-color);
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    padding: 40px 25px 110px;
+    position: relative;
+    z-index: 1;
+}
+.pricingTable:before,
+.pricingTable:after{
+    content: '';
+    background-color: var(--main-color);
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    clip-path: polygon(0 0, 100% 13%, 100% 100%, 0 85%);
+}
+.pricingTable:after{
+    background-color: #d9d5d5;
+    width: 100%;
+    height: calc(100% - 30px);
+    clip-path: polygon(0 0, 100% 26%, 100% 100%, 0 80%);
+}
+.pricingTable .pricingTable-header{ margin: 0 0 15px; }
+.pricingTable .price-value{
+    color: #fff;
+    background-color: var(--main-color);
+    width: 130px;
+    height: 130px;
+    padding: 29px 0;
+    margin: 0 auto 8px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+}
+.pricingTable .price-value .amount{
+    font-size: 33px;
+    font-weight: 800;
+    line-height: 38px;
+    display: block;
+}
+.pricingTable .price-value .duration{
+    font-size: 15px;
+    font-weight: 600;
+}
+.pricingTable .title{
+    color: #333;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    padding: 0 20px 10px;
+    margin: 0;
+    border-bottom: 3px dashed var(--main-color);
+    display: inline-block;
+}
+.pricingTable .pricingTable-signup a{
+    color: #fff;
+    background-color: #333333;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 5px 20px;
+    margin: 0 0 10px;
+    border-radius: 30px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+}
+.pricingTable .pricingTable-signup a:hover{
+    color: #ffffff;
+    background-color: #ffc451;
+}
+.pricingTable .pricing-content{
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: inline-block;
+}
+.pricingTable .pricing-content li{
+    color: #333333;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 35px;
+    letter-spacing: .5px;
+    padding: 0 0 0 28px;
+    margin: 0 0 3px;
+    position: relative;
+}
+.pricingTable .pricing-content li:last-child{ margin: 0; }
+.pricingTable .pricing-content li:before{
+    content: "\f00c";
+    color: #333333;
+    font-family: "Font Awesome 5 free";
+    font-size: 14px;
+    font-weight: 900;
+    position: absolute;
+    top: 2px;
+    left: 0;
+}
+.pricingTable .pricing-content li.disable:before{ content: "\f00d"; }
+.pricingTable.magenta{ --main-color: #333333;; }
+.pricingTable.blue{ --main-color: #1f5ebd; }
+@media only screen and (max-width: 990px){
+    .pricingTable{ margin: 0 0 40px; }
+}

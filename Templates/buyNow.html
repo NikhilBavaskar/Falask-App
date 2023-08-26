@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Buy Your Website</title>
+     <link href="{{ url_for('static', filename='assets/img/Black White Modern Professional Company Business Logo.png') }}" rel="icon">
+  <link href="{{ url_for('static', filename='assets/img/assets/img/Black White Modern Professional Company Business Logo.png') }}" rel="apple-touch-icon">
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/BuyNow/fonts/material-icon/css/material-design-iconic-font.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/BuyNow/vendor/nouislider/nouislider.min.css') }}">
+ <link href="{{ url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/quill/quill.snow.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('static', filename='assets/css/Login.css') }}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!-- Main css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/BuyNow/css/style.css') }}">
+</head>
+<body>
+
+
+    <div class="main">
+
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="images/form-img.jpg" alt="">
+                    <div class="signup-img-content">
+
+                    </div>
+                </div>
+                <div class="signup-form">
+                      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+              {% for message in messages %}
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <i class="bi bi-exclamation-octagon me-1"></i>
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+               {% endfor %}
+               {% endif %}
+    {% endwith %}
+                    <form method="POST" action="/lead" class="register-form" id="register-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="first_name" class="required">Full name</label>
+                                    <input type="text" name="first_name" id="first_name" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="last_name" class="required">Your Requirement</label>
+                                    <input type="text" name="Requirement" id="last_name" />
+                                </div>
+                                <div class="form-radio">
+                                    <div class="label-flex">
+                                        <label for="technology" class="required">Technology</label>
+                                    </div>
+                                    <div class="form-radio-group">
+                                        <div class="form-radio-item">
+                                            <input type="radio" value="Wordpress" name="technology" id="Wordpress" checked>
+                                            <label for="Wordpress">Wordpress</label>
+                                            <span class="check"></span>
+                                        </div>
+                                        <div class="form-radio-item">
+                                            <input type="radio" name="technology" value="Java" id="Java">
+                                            <label for="Java">Java</label>
+                                            <span class="check"></span>
+                                        </div>
+                                        <div class="form-radio-item">
+                                            <input type="radio" name="technology" value="Python " id="Python">
+                                            <label for="Python">Python</label>
+                                            <span class="check"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-input">
+                                    <label for="company" class="required">Your Business Sector</label>
+                                    <input type="text" name="Business" id="company" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="email" class="required">Email</label>
+                                    <input type="text" name="email" id="email" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="phone_number" class="required">Phone number</label>
+                                    <input type="number" minlength="10" maxlength="10"  name="phone_number" id="phone_number" />
+                                </div>
+                            </div>
+                            <div class="form-group"  >
+                                <div class="form-radio">
+                                    <div class="label-flex">
+                                        <label for="Service" class="required">Service Mode</label>
+                                    </div>
+                                    <div class="form-radio-group">            
+                                        <div class="form-radio-item">
+                                            <input type="radio" value="Development" name="Service" id="Development" checked>
+                                            <label for="Development">Development</label>
+                                            <span class="check"></span>
+                                        </div>
+                                        <div class="form-radio-item">
+                                            <input type="radio" name="Service" value="Development + hosting" id="development_hosting">
+                                            <label for="development_hosting">Development + Hosting</label>
+                                            <span class="check"></span>
+                                        </div>
+                                        <div class="form-radio-item">
+                                            <input type="radio" name="Service" value="Development + hosting + Domain" id="Development_Hosting_Domain">
+                                            <label for="Development_Hosting_Domain">Development + Hosting + Domain</label>
+                                            <span class="check"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-input">
+                                    <label for="Your_Address" class="required"> Your Address</label>
+                                    <input type="text" name="Your_Address" id="Your_Address" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="Pincode" class="required">Pincode</label>
+                                    <input type="number" name="Pincode" id="Pincode" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-submit">
+                            <input type="submit" value="Submit" class="submit" id="submit" name="submit" />
+                            <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='assets/BuyNow/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/BuyNow/vendor/nouislider/nouislider.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/BuyNow/vendor/wnumb/wNumb.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/BuyNow/vendor/jquery-validation/dist/jquery.validate.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/BuyNow/vendor/jquery-validation/dist/additional-methods.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/BuyNow/js/main.js') }}"></script>
+</body>
+</html>

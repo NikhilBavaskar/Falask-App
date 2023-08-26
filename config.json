@@ -1,0 +1,16 @@
+{
+  "param": {
+    "web-name": "TechnoHeart ",
+    "heading": "Empowering Businesses with Exceptional Web Solutions",
+    "tag": "Building Digital Success Together",
+   "local_server": "True",
+    "local_uri": "mysql://root:rByxQGp1ofFvn9ODN2wq@containers-us-west-199.railway.app:5646/railway",
+    "prod_uri":  "mysql://root:rByxQGp1ofFvn9ODN2wq@containers-us-west-199.railway.app:5646/railway",
+    "gmail-user":"bavaskarnikhil@gmail.com",
+    "gmail-password": "qcpekyzqhrihsuwg",
+    "pass": "Nikhil147536",
+    "login-pass": "Nikhil147536",
+    "user":"bavaskarnikhil@gmail.com",
+    "upload_location": "E:\\Working Project\\Main Website\\static\\assets\\img\\Uplode"
+  }
+}

@@ -1,0 +1,7 @@
+flask 
+flask_sqlalchemy 
+mysql
+waitresss
+flask_mail 
+slugify
+werkzeug
